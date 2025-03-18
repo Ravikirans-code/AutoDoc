@@ -1,4 +1,4 @@
-name: Update Confluence Docs
+name: Test Generate Docs
 
 on:
   push:
@@ -6,17 +6,17 @@ on:
       - main
 
 jobs:
-  update-docs:
+  test-generate-docs:
     runs-on: ubuntu-latest
-
+    
     steps:
-      # ✅ Step 1: Checkout Code
       - name: Checkout Code
         uses: actions/checkout@v2
 
-      # ✅ Step 2: Generate Docs with Copilot
-      - name: Generate Docs with Copilot
+      - name: Generate Docs Test
         run: |
-          echo "Generating documentation..."
-          # Example script using Copilot or other tools to extract business logic
-          npx copilot-generate-docs > generated-docs.md
+          echo "Generating test documentation..."
+          echo "## Test Documentation" > generated-docs.md
+          echo "- Sample data point 1" >> generated-docs.md
+          echo "- Sample data point 2" >> generated-docs.md
+          cat generated-docs.md
