@@ -1,0 +1,22 @@
+name: Update Confluence Docs
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-docs:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ✅ Step 1: Checkout Code
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      # ✅ Step 2: Generate Docs with Copilot
+      - name: Generate Docs with Copilot
+        run: |
+          echo "Generating documentation..."
+          # Example script using Copilot or other tools to extract business logic
+          npx copilot-generate-docs > generated-docs.md
